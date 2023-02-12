@@ -16,5 +16,5 @@ public @interface UUID {
 
     Class<? extends Payload>[] payload() default {};
 
-    String message() default "Invalid format for UUID!";
+    String message() default "Must Be UUID Format";
 }
