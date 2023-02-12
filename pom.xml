@@ -19,6 +19,7 @@
         <commons-validator>1.7</commons-validator>
         <commons-lang3.version>3.12.0</commons-lang3.version>
         <spring-boot.version>3.0.2</spring-boot.version>
+        <dependencies.dependency.version>1.0.0</dependencies.dependency.version>
     </properties>
 
     <dependencies>

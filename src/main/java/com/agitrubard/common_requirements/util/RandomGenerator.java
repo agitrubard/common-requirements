@@ -7,9 +7,10 @@ import java.util.Random;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class RandomGenerator {
+
     private static final Random RANDOM = new Random();
 
-    public static Long generate(final int length) {
+    public static Long generateNumber(final int length) {
         final long bound = generateNumberWithSameDigits(length, 9);
         final long minBound = generateNumberWithSameDigits(length - 1, 9) + 1;
         return RANDOM.nextLong(minBound, bound);
