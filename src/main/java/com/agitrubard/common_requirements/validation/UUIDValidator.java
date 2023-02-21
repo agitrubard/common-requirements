@@ -4,7 +4,7 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import java.util.regex.Pattern;
 
-class UUIDValidation implements ConstraintValidator<UUID, String> {
+class UUIDValidator implements ConstraintValidator<ValidUUID, String> {
 
     private static final Pattern UUID_REGEX_PATTERN = Pattern.compile("^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$");
 

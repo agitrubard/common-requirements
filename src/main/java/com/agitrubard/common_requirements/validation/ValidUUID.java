@@ -7,13 +7,14 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Constraint(validatedBy = URLValidation.class)
+@Constraint(validatedBy = UUIDValidator.class)
 @Target({ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface URL {
+public @interface ValidUUID {
+
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
 
-    String message() default "Must Be URL Format";
+    String message() default "Must Be UUID Format";
 }

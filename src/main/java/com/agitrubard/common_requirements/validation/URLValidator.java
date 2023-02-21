@@ -5,7 +5,7 @@ import org.apache.commons.validator.routines.UrlValidator;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-class URLValidation implements ConstraintValidator<URL, Object> {
+class URLValidator implements ConstraintValidator<ValidURL, Object> {
 
     public boolean isValid(final Object value, final ConstraintValidatorContext context) {
         if (value == null) return true;

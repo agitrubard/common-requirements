@@ -7,14 +7,13 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Constraint(validatedBy = UUIDValidation.class)
-@Target({ElementType.FIELD, ElementType.PARAMETER})
+@Target(value = ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface UUID {
+@Constraint(validatedBy = PhoneNumberValidator.class)
+public @interface ValidPhoneNumber {
+    String message() default "Phone Number Is Not Valid!";
 
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
-
-    String message() default "Must Be UUID Format";
 }
