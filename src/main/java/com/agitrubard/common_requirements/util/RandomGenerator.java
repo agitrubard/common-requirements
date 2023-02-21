@@ -11,28 +11,17 @@ public class RandomGenerator {
     private static final Random RANDOM = new Random();
 
     public static Long generateNumber(final int length) {
-        final long bound = generateNumberWithSameDigits(length, 9);
-        final long minBound = generateNumberWithSameDigits(length - 1, 9) + 1;
-        return RANDOM.nextLong(minBound, bound);
+        final long minimumValue = generateMinimumValue(length);
+        final long maximumValue = generateMaximumValue(length);
+        return RANDOM.nextLong(minimumValue, maximumValue);
     }
 
-    private static Long generateNumberWithSameDigits(final int digit, final int digitCount) {
+    private static Long generateMinimumValue(final int length) {
+        return (long) Math.pow(10, (double) length - 1);
+    }
 
-        if (digit >= 10) {
-            throw new IllegalArgumentException("Digit must be less than 10!");
-        }
-
-        if (digitCount == 0) {
-            return 1L;
-        }
-
-        StringBuilder stringBuilder = new StringBuilder();
-        var counter = digitCount;
-        while (counter > 0) {
-            stringBuilder.append(digit);
-            counter--;
-        }
-        return Long.parseLong(stringBuilder.toString());
+    private static Long generateMaximumValue(final int length) {
+        return (long) (Math.pow(10, length));
     }
 
 
